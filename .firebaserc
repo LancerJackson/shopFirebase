@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "uam-shopp": {
+      "hosting": {
+        "app": [
+          "uam-shopp"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "uam-shopp"
+  }
+}
