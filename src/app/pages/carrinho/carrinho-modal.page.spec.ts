@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { CarrinhoPage } from './carrinho.page';
+import { CarrinhoModalPage } from './carrinho-modal.page';
 
-describe('CarrinhoPage', () => {
-  let component: CarrinhoPage;
-  let fixture: ComponentFixture<CarrinhoPage>;
+describe('CarrinhoModalPage', () => {
+  let component: CarrinhoModalPage;
+  let fixture: ComponentFixture<CarrinhoModalPage>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ CarrinhoPage ],
+      declarations: [ CarrinhoModalPage ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(CarrinhoPage);
+    fixture = TestBed.createComponent(CarrinhoModalPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

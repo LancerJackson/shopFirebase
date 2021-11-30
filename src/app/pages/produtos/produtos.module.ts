@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { ProdutosPage } from './produtos.page';
  
 import { ProdutosPageRoutingModule } from './produtos-routing.module';
-import { CarrinhoPageModule } from '../carrinho/carrinho.module';
+import { CarrinhoModalPageModule } from '../carrinho/carrinho-modal.module';
  
 @NgModule({
   imports: [
@@ -13,7 +13,7 @@ import { CarrinhoPageModule } from '../carrinho/carrinho.module';
     FormsModule,
     IonicModule,
     ProdutosPageRoutingModule,
-    CarrinhoPageModule
+    CarrinhoModalPageModule
   ],
   declarations: [ProdutosPage]
 })

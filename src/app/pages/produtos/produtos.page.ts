@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Animation, AnimationController, ModalController } from '@ionic/angular';
 import { Observable } from 'rxjs';
-import { CarrinhoPage } from '../carrinho/carrinho.page';
+import { CarrinhoModalPage } from '../carrinho/carrinho-modal.page';
 import { ProductService } from '../../services/product.service';
 import { IonContent } from '@ionic/angular';
 import { Router } from '@angular/router';
@@ -58,7 +58,7 @@ export class ProdutosPage implements OnInit, AfterViewInit {
  
   async openCart() {
     const modal = await this.modalCtrl.create({
-      component: CarrinhoPage
+      component: CarrinhoModalPage
     });
     await modal.present();
   }
