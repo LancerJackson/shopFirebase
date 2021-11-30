@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { ProductService } from '../../services/product.service';
 
 @Component({
   selector: 'app-historia',
@@ -6,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./historia.page.scss'],
 })
 export class HistoriaPage implements OnInit {
+  products: Observable<any[]>;
 
-  constructor() { }
+  constructor(private productService: ProductService) { }
 
   ngOnInit() {
+    this.products = this.productService.getProducts();
   }
 
 }

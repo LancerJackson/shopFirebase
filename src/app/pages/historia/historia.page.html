@@ -1,9 +1,26 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>historia</ion-title>
+  <ion-toolbar color="wineC">
+    <ion-title>Cada bebida, uma história</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-list>
+    <ion-item *ngFor="let p of products | async" (click)="p.expanded = !p.expanded">
+
+      <ion-card>
+        <ion-img [src]="p.image" style="height: 50vh;"></ion-img>
+        <ion-card-header>
+          <ion-card-title>{{ p.nome }}</ion-card-title>
+          <ion-card-subtitle>{{ p.descricao }}</ion-card-subtitle>
+        </ion-card-header>
+      
+        <ion-card-content>
+          {{ p.historia }}
+        </ion-card-content>
+      </ion-card>
+      
+    </ion-item>
+  </ion-list>
 
 </ion-content>
