@@ -1,0 +1,21 @@
+.beerBanner {
+    background-image: url('../../../assets/beer-banner.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 30vh;
+    width: 100%;
+}
+.grid {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+  
+  .grid-item {
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+    align-self: center;
+}
