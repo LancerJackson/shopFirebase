@@ -1,9 +1,70 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>produtos</ion-title>
+  <ion-toolbar color="wineC">
+    <ion-title>AdegaBeer</ion-title>
   </ion-toolbar>
 </ion-header>
-
+ 
 <ion-content>
+  
+<!--
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let p of products | async" (click)="p.expanded = !p.expanded">
+        <ion-card>
+          <ion-item>
+            <ion-img [src]="p.image" style="width: 100%;"></ion-img>
+          </ion-item>
+          <ion-card-content>
+            Bacon ipsum dolor amet salami prosciutto ham hock, strip steak buffalo ribeye pork chop. Beef ribs tenderloin tail shoulder.
+            Spare ribs ham shoulder brisket rump hamburger. Pork belly kevin shoulder prosciutto ribeye pork chop chicken
+            strip steak pig.
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+-->
 
+  <ion-list>
+    <ion-item *ngFor="let p of products | async" (click)="p.expanded = !p.expanded">
+      <ion-thumbnail slot="start">
+        <ion-img [src]="p.image"></ion-img>
+      </ion-thumbnail>
+      <ion-label class="ion-text-wrap">
+        {{ p.nome }}<br>
+        <b>Preço: {{ p.preco | currency:'BRL' }}</b>
+        <p>Quantidade: {{ p.quantidade }}</p>
+        <div [hidden]="!p.expanded">
+          <p>Categoria: {{ p.categoria }}</p>
+          <p>{{ p.descricao }}</p>
+          
+        </div>
+      </ion-label>
+      <ion-row slot="end" class="ion-no-padding ion-align-items-center">
+        <ion-col size="5">
+          <ion-button (click)="addToCart($event, p)" fill="clear" color="success">
+            <ion-icon name="add" slot="icon-only"></ion-icon>
+          </ion-button>
+        </ion-col>
+ 
+        <ion-col size="2">
+          {{ cart[p.id] || 0 }}
+        </ion-col>
+ 
+        <ion-col size="5">
+          <ion-button (click)="removeFromCart($event, p)" fill="clear" [disabled]="!cart[p.id] || cart[p.id] == 0" color="danger">
+            <ion-icon name="remove" slot="icon-only"></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+ 
+    </ion-item>
+  </ion-list>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="openCart()" color="wineC" #myfab>
+      <ion-icon name="cart"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+ 
 </ion-content>

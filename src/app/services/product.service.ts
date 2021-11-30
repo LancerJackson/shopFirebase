@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
-<<<<<<< HEAD
 import { Storage } from '@capacitor/storage';
 import firebase from 'firebase/compat/app';
 import { BehaviorSubject } from 'rxjs';
@@ -12,11 +11,6 @@ const ID_STORAGE_KEY = 'MY_ID';
 const INCREMENT = firebase.firestore.FieldValue.increment(1);
 const DECREMENT = firebase.firestore.FieldValue.increment(-1);
  
-=======
-import firebase from 'firebase/compat/app';
-import { BehaviorSubject } from 'rxjs';
-
->>>>>>> 27d28d790bf8acba4e40fca9f5c3ef47bea830eb
 export interface User {
   uid: string;
   email: string;
@@ -27,24 +21,17 @@ export interface User {
 })
 
 export class ProductService {
-<<<<<<< HEAD
   datas = []
   currentUser: User = null;
   cart = new BehaviorSubject({});
   cartKey = null;
   productsCollection: AngularFirestoreCollection;
-=======
-  currentUser: User = null;
->>>>>>> 27d28d790bf8acba4e40fca9f5c3ef47bea830eb
  
   constructor(private afAuth: AngularFireAuth, private afs: AngularFirestore) {
     this.afAuth.onAuthStateChanged((user) => {
       this.currentUser = user;
     });
-<<<<<<< HEAD
     this.productsCollection = this.afs.collection('products');
-=======
->>>>>>> 27d28d790bf8acba4e40fca9f5c3ef47bea830eb
   }
 
   async signup({ email, password }): Promise<any> {
@@ -54,32 +41,22 @@ export class ProductService {
     );
 
     const uid = credential.user.uid;
-<<<<<<< HEAD
     
     return this.afs.doc(
       `users/${uid}`
-=======
-
-    return this.afs.doc(
-      users/${uid}
->>>>>>> 27d28d790bf8acba4e40fca9f5c3ef47bea830eb
     ).set({
       uid,
       email: credential.user.email,
     })
   }
-<<<<<<< HEAD
 
   signIn({ email, password }) {
     return this.afAuth.signInWithEmailAndPassword(email, password);
   }
-=======
->>>>>>> 27d28d790bf8acba4e40fca9f5c3ef47bea830eb
  
   signOut(): Promise<void> {
     return this.afAuth.signOut();
   }
-<<<<<<< HEAD
  
   getProducts() {
     return this.productsCollection.valueChanges({ idField: 'id' });
@@ -150,6 +127,4 @@ export class ProductService {
       lastUpdate: firebase.firestore.FieldValue.serverTimestamp()
     });
   }
-=======
->>>>>>> 27d28d790bf8acba4e40fca9f5c3ef47bea830eb
 }
