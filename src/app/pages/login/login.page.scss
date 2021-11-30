@@ -1,0 +1,36 @@
+ion-content {
+    --padding-top: 30vh;
+    --padding-start: 10%;
+    --padding-end: 10%;
+    --background: url('../../../assets/beer-logo.jpg') 0 0/100% 100% no-repeat;
+}
+
+@media(min-width: 768px){
+    ion-content {
+        --padding-top: 25vh;
+        --padding-start: 20%;
+        --padding-end: 20%;
+    }
+}
+
+@media(min-width: 992px){
+    ion-content {
+        --padding-start: 25%;
+        --padding-end: 25%;
+    }
+}
+ 
+.input-group {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+.errors {
+    font-size: small;
+    color: #fff;
+    background: var(--ion-color-danger);
+    padding-left: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
