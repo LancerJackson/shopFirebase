@@ -14,4 +14,8 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
+<<<<<<< HEAD
 export class LoginPageRoutingModule {}
+=======
+export class LoginPageRoutingModule {}
+>>>>>>> 27d28d790bf8acba4e40fca9f5c3ef47bea830eb

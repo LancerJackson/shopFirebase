@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -59,3 +60,44 @@ export class LoginPage implements OnInit {
     return this.credentialForm.get('password');
   }
 }
+=======
+<ion-header>
+  <ion-toolbar color="wineC">
+    <ion-title>AdegaBeer - Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+ 
+<ion-content>
+ 
+  <form [formGroup]="credentialForm">
+    <ion-item>
+      <ion-input
+        placeholder="Email"
+        formControlName="email"
+        autofocus="true"
+        clearInput="true"
+      ></ion-input>
+    </ion-item>
+    <div *ngIf="(email.dirty  email.touched) && email.errors" class="errors">
+      <span *ngIf="email.errors?.required">Necessário digitar um Email</span>
+      <span *ngIf="email.errors?.email">Email invalido</span>
+    </div>
+ 
+    <ion-item class="ion-margin-top">
+      <ion-input
+      placeholder="Senha"
+      type="password"
+      formControlName="password"
+      clearInput="true"
+    ></ion-input>
+    </ion-item>
+    <div *ngIf="(password.dirty  password.touched) && password.errors" class="errors">
+      <span *ngIf="password.errors?.required">Necessário digitar uma senha</span>
+      <span *ngIf="password.errors?.minlength">Senha precisa ter mais de 6 caracteres</span>
+    </div>
+  </form>
+ 
+    <ion-button (click)="signIn()" expand="full" color="wine" class="ion-margin-top">Entrar</ion-button>
+ 
+</ion-content>
+>>>>>>> 27d28d790bf8acba4e40fca9f5c3ef47bea830eb
