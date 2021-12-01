@@ -26,6 +26,36 @@ const routes: Routes = [
           },
         ]
       },
+      {
+        path: 'sobre',
+        children: [
+          {
+            path: '',
+            ...canActivate(redirectUnauthorizedToLogin),
+            loadChildren: () => import('../pages/sobre/sobre.module').then( m => m.SobrePageModule)
+          },
+        ]
+      },
+      {
+        path: 'historia',
+        children: [
+          {
+            path: '',
+            ...canActivate(redirectUnauthorizedToLogin),
+            loadChildren: () => import('../pages/historia/historia.module').then( m => m.HistoriaPageModule)
+          },
+        ]
+      },
+      {
+        path: 'cupons',
+        children: [
+          {
+            path: '',
+            ...canActivate(redirectUnauthorizedToLogin),
+            loadChildren: () => import('../pages/cupons/cupons.module').then( m => m.CuponsPageModule)
+          },
+        ]
+      },
       { path: '', redirectTo: '/home/produtos', pathMatch: 'full' }
     ]
   },
