@@ -5,7 +5,26 @@
 </ion-header>
 
 <ion-content>
+  <ion-item *ngFor="let c of cupons | async">
 
+    <ion-col size="12" class="grid">
+      <ion-card class="grid-item">
+        <ion-card-header>
+          <ion-card-title class="ion-text-center">{{ c.nome }}</ion-card-title>
+        </ion-card-header>
+      
+        <ion-card-content>
+          <p>Valor do cupom: {{ c.porcentagem }}%</p>
+          <p>{{ c.descricao }}</p>
+          <p>Validade: {{ momentjs(c.validade.toDate()).format('DD/MM/YYYY HH:mm') }}</p>
+
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+
+  </ion-item>
+
+<!--
   <ion-item background-color="wine" class="ion-margin-top">
     <ion-row>
 
@@ -59,5 +78,6 @@
       
     </ion-row>
   </ion-item>
+-->
 
 </ion-content>
